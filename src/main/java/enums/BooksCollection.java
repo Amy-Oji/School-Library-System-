@@ -1,0 +1,10 @@
+package enums;
+
+public enum BooksCollection {
+    JAVA_FOR_DUMMIES,
+    INTRODUCTION_TO_OOP,
+    ALGORITHMS,
+    FRONTEND_FOR_BEGINNERS,
+    INTRO_TO_COMPUTER_SCIENCE,
+    INTRO_TO_PROGRAMING
+}
