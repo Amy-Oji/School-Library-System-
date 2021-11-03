@@ -29,8 +29,8 @@ public class MyLibApp {
         library.addBookToShelf(JavaForDummies, 6);
         library.addBookToShelf(IntoToOop,2);
         library.addBookToShelf(FrontEndForBeginners, 3);
-        library.addBookToShelf(IntroToComputerScience, 7);
-        library.addBookToShelf(Algorithms, 1);
+        library.addBookToShelf(IntroToComputerScience, 1);
+        library.addBookToShelf(Algorithms, 9);
         library.addBookToShelf(IntroToPrograming, 7);
 
         System.out.println(library.getBooksCatalogue());
@@ -39,14 +39,14 @@ public class MyLibApp {
         library.requestForBook(teacher2, JavaForDummies);
         library.requestForBook(seniorStudent1, Algorithms);
         library.requestForBook(juniorStudent2, FrontEndForBeginners);
-        library.requestForBook(juniorStudent3, IntroToPrograming);
+        library.requestForBook(juniorStudent3, IntoToOop);
 
 
         library.giveBookToPerson();
         library.giveBookToPerson();
-        library.giveBookToPerson();
-        library.giveBookToPerson();
-        library.giveBookToPerson();
+        //library.giveBookToPerson();
+        //library.giveBookToPerson();
+        //library.giveBookToPerson();
 
         System.out.println(library.getBooksCatalogue());
 

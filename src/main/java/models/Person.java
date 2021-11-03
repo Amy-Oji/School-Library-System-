@@ -16,29 +16,19 @@ public class Person {
 }
 
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public String getLibCardId() {
-        return LibCardId;
-    }
+    public String getLibCardId() { return LibCardId; }
 
-    public void setLibCardId(String libCardId) {
-        LibCardId = libCardId;
-    }
+    public void setLibCardId(String libCardId) {  LibCardId = libCardId; }
 
-    public PersonStatus getPersonStatus() {
-        return personStatus;
-    }
+    public PersonStatus getPersonStatus() { return personStatus; }
 
-    public int getPriority() {
-        return priority;
-    }
+    public int getPriority() { return priority; }
+
+
 
     public void setPriority(){
         if (personStatus == PersonStatus.TEACHER){

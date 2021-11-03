@@ -1,11 +1,9 @@
 package services.servicesImplementation;
 
-       //import enums.BooksCollection;
+import exception.BookNotFoundException;
 import models.Books;
 import models.Person;
 import services.*;
-//import services.LibrarianService;
-      //import services.PersonService;
 import java.util.*;
 
 public class LibraryServiceImplementation implements LibraryService, PersonService {
@@ -54,14 +52,12 @@ public class LibraryServiceImplementation implements LibraryService, PersonServi
         final Person person = this.getPriorityQueue().remove();
         final Enum personValue = this.getBookLenders().get(person.getName());
         final int noOfCopies = this.getBooksCatalogue().get(personValue.toString());
-        //TODO
-        //check the copies of the book if 0 return book taken.
-        //check the priority queue if empty return no request made.
 
         if (!priorityQueue.isEmpty() && noOfCopies > 0) {
             this.getBooksCatalogue().put(personValue.name(), noOfCopies - 1);
         } else {
-            System.out.println("Book taken");
+            throw new BookNotFoundException("Book taken");
+            // System.out.println("Book taken");
         }
 
         return null;
