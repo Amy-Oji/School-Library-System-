@@ -12,5 +12,4 @@ public interface LibraryService {
 
     Map<String, Integer> getBooksCatalogue();
 
-   // Map<String, Integer> assertNotNull(Map<String, Integer> booksCatalogue);
 }

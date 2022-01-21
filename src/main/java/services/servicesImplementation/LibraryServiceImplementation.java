@@ -1,6 +1,6 @@
 package services.servicesImplementation;
 
-import exception.BookNotFoundException;
+import exception.InvalidRequestException;
 import models.Books;
 import models.Person;
 import services.*;
@@ -49,18 +49,20 @@ public class LibraryServiceImplementation implements LibraryService, PersonServi
 
     @Override
     public String giveBookToPerson() {
-        final Person person = this.getPriorityQueue().remove();
-        final Enum personValue = this.getBookLenders().get(person.getName());
-        final int noOfCopies = this.getBooksCatalogue().get(personValue.toString());
-
-        if (!priorityQueue.isEmpty() && noOfCopies > 0) {
-            this.getBooksCatalogue().put(personValue.name(), noOfCopies - 1);
+        if(!priorityQueue.isEmpty()){
+            final Person person = this.getPriorityQueue().remove();
+            final Enum borrowedBook = this.getBookLenders().get(person.getName());
+            final int copiesOfBook = this.getBooksCatalogue().get(borrowedBook.toString());
+            this.getPersonQueue().remove(person);
+            if (copiesOfBook > 0) {
+                this.getBooksCatalogue().put(borrowedBook.name(), copiesOfBook - 1);
+                return  (person.getPersonStatus() + "  " + person.getName() + " has been given " + borrowedBook + " successfully.");
+            } else {
+                return ("Sorry, " + person.getPersonStatus() + " " + person.getName() + " : (" + borrowedBook + ") Book Taken.");
+            }
         } else {
-            throw new BookNotFoundException("Book taken");
-            // System.out.println("Book taken");
+            throw new InvalidRequestException("Invalid Request");
         }
-
-        return null;
     }
 
 

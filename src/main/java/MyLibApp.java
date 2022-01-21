@@ -17,10 +17,10 @@ public class MyLibApp {
         Books IntroToComputerScience = new Books(BooksCollection.INTRO_TO_COMPUTER_SCIENCE);
 
         Person juniorStudent3 = new Person("Francis", "89574", PersonStatus.JUNIOR_STUDENT);
-        Person teacher1 = new Person("Daro", "67480", PersonStatus.TEACHER);
+        Person teacher1 = new Person("Taya", "67480", PersonStatus.TEACHER);
         Person teacher2 = new Person("Emeka", "78498", PersonStatus.TEACHER);
-        Person seniorStudent1 = new Person ("Tosin", "75860", PersonStatus.SENIOR_STUDENT);
-        Person juniorStudent2 = new Person("Taya", "8862", PersonStatus.JUNIOR_STUDENT);
+        Person teacher3 = new Person ("Tosin", "75860", PersonStatus.TEACHER);
+        Person juniorStudent2 = new Person("Daro", "8862", PersonStatus.JUNIOR_STUDENT);
         Person seniorStudent2 = new Person("Nebe","78566", PersonStatus.SENIOR_STUDENT);
         Person juniorStudent = new Person("Ken", "937846", PersonStatus.JUNIOR_STUDENT);
 
@@ -35,18 +35,23 @@ public class MyLibApp {
 
         System.out.println(library.getBooksCatalogue());
 
+
+
+        //library.requestForBook(teacher3, Algorithms);
         library.requestForBook(teacher1, IntoToOop);
+        //library.requestForBook(teacher, IntoToOop);
+        library.requestForBook(teacher3, IntoToOop);
         library.requestForBook(teacher2, JavaForDummies);
-        library.requestForBook(seniorStudent1, Algorithms);
-        library.requestForBook(juniorStudent2, FrontEndForBeginners);
-        library.requestForBook(juniorStudent3, IntoToOop);
+//        library.requestForBook(juniorStudent2, FrontEndForBeginners);
+//        library.requestForBook(juniorStudent3, IntoToOop);
 
 
-        library.giveBookToPerson();
-        library.giveBookToPerson();
-        //library.giveBookToPerson();
-        //library.giveBookToPerson();
-        //library.giveBookToPerson();
+
+        System.out.println(library.giveBookToPerson());
+        System.out.println(library.giveBookToPerson());
+        System.out.println(library.giveBookToPerson());
+       // System.out.println(library.giveBookToPerson());
+        //System.out.println(library.giveBookToPerson());
 
         System.out.println(library.getBooksCatalogue());
 
